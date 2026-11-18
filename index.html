@@ -20,16 +20,13 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; -webkit-tap-highlight-color: transparent; }
-        
         body { background-color: var(--bg-color); color: var(--text-main); padding-bottom: 100px; }
 
         /* --- HEADER & TABS --- */
         header { position: sticky; top: 0; z-index: 50; background: var(--header-bg); border-bottom: 1px solid #111; }
-        
         .header-top { padding: 20px 20px 10px; text-align: center; max-width: 800px; margin: 0 auto; position: relative; }
         header h1 { font-size: 22px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 15px; }
         
-        /* Floating Help/Reminder Icon in Header */
         .help-icon { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; font-size: 18px; }
         .help-icon:hover { background: rgba(255,255,255,0.2); }
 
@@ -37,7 +34,6 @@
         .search-bar { width: 100%; padding: 12px 20px; border-radius: 30px; border: none; background: #fff; font-size: 14px; outline: none; transition: all 0.3s ease; }
         .search-bar:focus { box-shadow: 0 0 0 3px rgba(255,255,255,0.2); }
         
-        /* WRAPPED TABS */
         .tabs-container { display: flex; flex-wrap: wrap; justify-content: center; padding: 10px 20px 15px; gap: 8px; max-width: 800px; margin: 0 auto; }
         .tab { background: #444; color: #ccc; padding: 8px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; border: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .tab:hover { background: #555; color: #fff; }
@@ -45,15 +41,10 @@
 
         /* --- MENU ITEMS --- */
         .container { max-width: 700px; margin: 0 auto; padding: 20px; }
-        
         .item { background: var(--card-bg); border-radius: 12px; padding: 15px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); animation: slideIn 0.4s ease-out forwards; opacity: 0; transform: translateY(10px); gap: 15px; }
         .item:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
-        
         @keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
-
-        /* Image Styling */
         .item-img { width: 80px; height: 80px; border-radius: 10px; object-fit: cover; background-color: #eee; flex-shrink: 0; }
-
         .item-info { flex: 1; }
         .item-name { font-weight: 600; font-size: 16px; color: #222; margin-bottom: 4px; }
         .item-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -61,14 +52,11 @@
         
         /* --- CONTROLS --- */
         .controls { display: flex; align-items: center; justify-content: center; min-width: 80px; }
-        
         .btn-add { background: #f4f4f4; color: #333; border: 1px solid #ddd; padding: 8px 18px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.2s ease; }
         .btn-add:hover { background: #e8e8e8; border-color: #ccc; }
         .btn-add:active { transform: scale(0.95); }
-        
         .qty-control-main { display: flex; align-items: center; gap: 2px; background: var(--header-bg); border-radius: 8px; padding: 5px; animation: popIn 0.2s ease-out; }
         @keyframes popIn { 0% { transform: scale(0.8); } 100% { transform: scale(1); } }
-        
         .qty-control-main button { background: rgba(255,255,255,0.1); color: #fff; border: none; width: 26px; height: 26px; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
         .qty-control-main button:hover { background: rgba(255,255,255,0.25); }
         .qty-control-main span { color: #fff; font-weight: 600; font-size: 14px; min-width: 22px; text-align: center; }
@@ -76,7 +64,6 @@
         /* --- FLOATING CART BAR --- */
         .cart-bar { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(0); width: calc(100% - 40px); max-width: 500px; background: var(--header-bg); color: #fff; padding: 16px 20px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; z-index: 40; box-shadow: 0 10px 30px rgba(0,0,0,0.25); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .cart-bar.hidden { transform: translateX(-50%) translateY(150%); opacity: 0; pointer-events: none; }
-        
         .cart-info { font-weight: 600; font-size: 16px; }
         .cart-info span { color: #aaa; font-size: 12px; font-weight: 400; display: block; margin-bottom: 2px; }
         .btn-checkout { background: var(--primary); color: white; border: none; padding: 12px 24px; border-radius: 10px; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.2s; }
@@ -86,10 +73,8 @@
         /* --- MODAL / BOTTOM SHEET --- */
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); display: flex; align-items: flex-end; justify-content: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        
         .modal { background: #fff; width: 100%; max-width: 600px; border-radius: 20px 20px 0 0; padding: 25px; max-height: 90vh; overflow-y: auto; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .modal-overlay.active .modal { transform: translateY(0); }
-        
         .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .modal-header h2 { font-size: 22px; font-weight: 700; color: #222; }
         .close-btn { background: #f0f0f0; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 20px; cursor: pointer; color: #555; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
@@ -100,7 +85,6 @@
         .qty-control { display: flex; align-items: center; gap: 12px; }
         .qty-btn { width: 28px; height: 28px; border-radius: 6px; border: 1px solid #ddd; background: #fff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
         .qty-btn:hover { background: #f4f4f4; }
-        
         .cart-total { display: flex; justify-content: space-between; font-weight: 700; font-size: 20px; margin-bottom: 25px; color: #222; }
         
         .input-group { margin-bottom: 16px; }
@@ -108,13 +92,31 @@
         .input-group input, .input-group textarea { width: 100%; padding: 14px 16px; border: 1px solid #ddd; border-radius: 10px; font-size: 15px; font-family: inherit; background: #fafafa; transition: 0.2s; }
         .input-group input:focus, .input-group textarea:focus { border-color: var(--header-bg); background: #fff; outline: none; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
         
-        /* Buttons inside Modal */
         .btn-send { width: 100%; background: var(--primary); color: white; border: none; padding: 18px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
         .btn-send:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
         .btn-send:active { transform: translateY(0); }
-        
         .btn-reminder { width: 100%; background: #fff; color: #d97706; border: 2px dashed #fcd34d; padding: 14px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 15px; display: flex; justify-content: center; align-items: center; gap: 8px; transition: all 0.2s; }
         .btn-reminder:hover { background: #fffbeb; border-color: #d97706; }
+
+        /* --- ADMIN PANEL STYLES --- */
+        .admin-footer { text-align: center; padding: 20px; margin-top: 20px; }
+        .admin-link { color: #999; text-decoration: none; font-size: 12px; cursor: pointer; }
+        .admin-panel { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 200; overflow-y: auto; padding: 20px; }
+        .admin-panel.active { display: block; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #eee; }
+        .admin-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px; }
+        .admin-table th, .admin-table td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
+        .admin-table th { background: #f9f9f9; }
+        .admin-input { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 5px; }
+        .admin-btn { background: #333; color: #fff; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; margin-right: 10px; }
+        .admin-btn:hover { background: #555; }
+        .admin-btn-danger { background: #e74c3c; }
+        .admin-btn-danger:hover { background: #c0392b; }
+        .admin-btn-success { background: #27ae60; }
+        .admin-btn-success:hover { background: #2ecc71; }
+        .admin-section { margin-bottom: 30px; background: #fdfbf7; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
+        .admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) { .admin-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -122,24 +124,16 @@
     <header>
         <div class="header-top">
             <h1 id="cafe-title">Resonance Cafe</h1>
-            <!-- Floating Help/Reminder Icon -->
             <div class="help-icon" onclick="sendReminder()" title="Send Order Reminder">🔔</div>
-            
             <div class="search-container">
                 <input type="text" id="search" class="search-bar" placeholder="Search menu...">
             </div>
         </div>
-        
-        <div class="tabs-container" id="tabs-container">
-            <!-- Tabs generated by JS -->
-        </div>
+        <div class="tabs-container" id="tabs-container"></div>
     </header>
 
-    <div class="container" id="menu-container">
-        <!-- Menu items will be generated here -->
-    </div>
+    <div class="container" id="menu-container"></div>
 
-    <!-- Floating Cart Bar -->
     <div class="cart-bar hidden" id="cart-bar">
         <div class="cart-info">
             <span id="cart-count">0 items</span>
@@ -148,169 +142,217 @@
         <button class="btn-checkout" onclick="openModal()">View Order</button>
     </div>
 
-    <!-- Checkout Modal -->
     <div class="modal-overlay" id="modal" onclick="closeModalOnOutsideClick(event)">
         <div class="modal" onclick="event.stopPropagation()">
             <div class="modal-header">
                 <h2>Checkout</h2>
                 <button class="close-btn" onclick="closeModal()">×</button>
             </div>
-            
-            <div class="cart-list" id="modal-cart-list">
-                <!-- Cart items go here -->
-            </div>
-            
-            <div class="cart-total">
-                <span>Total</span>
-                <span id="modal-total">PKR 0</span>
-            </div>
-
+            <div class="cart-list" id="modal-cart-list"></div>
+            <div class="cart-total"><span>Total</span><span id="modal-total">PKR 0</span></div>
             <div class="input-group">
                 <label>Your Name (Optional)</label>
                 <input type="text" id="customer-name" placeholder="e.g. Ali">
             </div>
-
             <div class="input-group">
                 <label>Address / Table No / Floor (Optional)</label>
                 <input type="text" id="customer-location" placeholder="e.g. Table 4, 2nd Floor">
             </div>
-            
             <div class="input-group">
                 <label>Special Instructions (Optional)</label>
                 <textarea id="customer-notes" rows="2" placeholder="e.g. Extra spicy, no onions..."></textarea>
             </div>
+            <button class="btn-send" onclick="sendOrder()">Send Order via WhatsApp</button>
+            <button class="btn-reminder" onclick="sendReminder()">⏰ Order taking too long? Send a Reminder</button>
+        </div>
+    </div>
 
-            <button class="btn-send" onclick="sendOrder()">
-                Send Order via WhatsApp
-            </button>
+    <div class="admin-footer">
+        <span class="admin-link" onclick="promptAdmin()">Admin Login</span>
+    </div>
 
-            <!-- Reminder Button inside Modal -->
-            <button class="btn-reminder" onclick="sendReminder()">
-                ⏰ Order taking too long? Send a Reminder
-            </button>
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="admin-panel">
+        <div class="admin-header">
+            <h2>Menu Admin Panel</h2>
+            <button class="close-btn" onclick="closeAdmin()">×</button>
+        </div>
+        
+        <div class="admin-section" style="background: #e8f5e9; border-color: #c8e6c9;">
+            <h3>Auto-Deploy Settings (GitHub)</h3>
+            <p style="font-size: 13px; color: #2e7d32; margin-bottom: 10px;">
+                Fill this in once. When you save a menu item, the website will automatically update the code and Netlify/Cloudflare will publish it for all customers.
+            </p>
+            <div class="admin-grid">
+                <div>
+                    <label>GitHub Token</label>
+                    <input type="password" id="gh-token" class="admin-input" placeholder="ghp_...">
+                </div>
+                <div>
+                    <label>Repository (username/repo)</label>
+                    <input type="text" id="gh-repo" class="admin-input" placeholder="e.g. myname/cafe-menu">
+                </div>
+            </div>
+            <button class="admin-btn" onclick="saveGitHubSettings()" style="margin-top: 10px;">Save GitHub Info</button>
+        </div>
+
+        <div class="admin-section">
+            <h3>Add New Item</h3>
+            <div class="admin-grid">
+                <div>
+                    <label>Item Name</label>
+                    <input type="text" id="new-name" class="admin-input" placeholder="e.g. Chicken Burger">
+                </div>
+                <div>
+                    <label>Category</label>
+                    <select id="new-category" class="admin-input">
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Starters">Starters</option>
+                        <option value="Pastas & Pizza">Pastas & Pizza</option>
+                        <option value="Burgers & Sandwiches">Burgers & Sandwiches</option>
+                        <option value="Signature Mains">Signature Mains</option>
+                        <option value="Steaks">Steaks</option>
+                        <option value="Hot Drinks">Hot Drinks</option>
+                        <option value="Cold Drinks">Cold Drinks</option>
+                        <option value="Mocktails">Mocktails</option>
+                        <option value="Shakes">Shakes</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Extras">Extras</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Price (PKR)</label>
+                    <input type="number" id="new-price" class="admin-input" placeholder="e.g. 500">
+                </div>
+                <div>
+                    <label>Image URL (Link)</label>
+                    <input type="text" id="new-img" class="admin-input" placeholder="https://...">
+                </div>
+                <div style="grid-column: 1 / -1;">
+                    <label>Description (Optional)</label>
+                    <textarea id="new-desc" class="admin-input" rows="2"></textarea>
+                </div>
+            </div>
+            <button class="admin-btn" onclick="addNewItem()" style="margin-top: 10px;">Add Item</button>
+        </div>
+
+        <div class="admin-section">
+            <h3>Edit Existing Items</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-table-body"></tbody>
+            </table>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 10px;">
+            <h3 style="margin-bottom: 10px;">Publish Changes</h3>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Click below to send your changes to GitHub and publish them live.</p>
+            <button class="admin-btn admin-btn-success" style="font-size: 16px; padding: 15px 30px;" onclick="deployToGitHub()" id="deploy-btn">Save & Deploy to Live Site</button>
         </div>
     </div>
 
     <script>
-        // =========================================================
-        // YOUR SETTINGS
-        // =========================================================
         const WHATSAPP_NUMBER = "923180058170"; 
         const CAFE_NAME = "Resonance Cafe";     
         const CURRENCY = "PKR ";
+        const ADMIN_PASSWORD = "admin123";
 
         document.getElementById("cafe-title").textContent = CAFE_NAME;
         document.title = CAFE_NAME;
 
-        // --- FULL MENU (70 ITEMS WITH IMAGES) ---
-        // I used Unsplash placeholder images. You can replace the URLs with your actual food photos later.
-        const MENU = [
-            // BREAKFAST
+        const defaultMenu = [
             { id: 1, category: "Breakfast", name: "Pakistani Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=200&q=80" },
-            { id: 2, category: "Breakfast", name: "Mexican Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1510693261006-223863692fb0?w=200&q=80" },
-            { id: 3, category: "Breakfast", name: "Cheese Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1494597564530-871f2b93ac55?w=200&q=80" },
+            { id: 2, category: "Breakfast", name: "Mexican Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1494597564530-871f2b93ac55?w=200&q=80" },
+            { id: 3, category: "Breakfast", name: "Cheese Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1510693261006-223863692fb0?w=200&q=80" },
             { id: 4, category: "Breakfast", name: "French Toast", price: 800, desc: "", img: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=200&q=80" },
             { id: 5, category: "Breakfast", name: "2 Bread Slices", price: 50, desc: "", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200&q=80" },
-
-            // STARTERS
             { id: 6, category: "Starters", name: "Chicken Caesar Salad", price: 799, desc: "", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&q=80" },
             { id: 7, category: "Starters", name: "Cream of Mushroom Soup", price: 550, desc: "", img: "https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=80" },
-            { id: 8, category: "Starters", name: "Fish Finger with Fries", price: 699, desc: "", img: "https://images.unsplash.com/photo-1579208575657-c595a05383b7?w=200&q=80" },
+            { id: 8, category: "Starters", name: "Fish Finger with Fries", price: 699, desc: "", img: "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=200&q=80" },
             { id: 9, category: "Starters", name: "Plain Fries", price: 499, desc: "", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=200&q=80" },
             { id: 10, category: "Starters", name: "Chef Masala Fries", price: 599, desc: "", img: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=200&q=80" },
-
-            // PASTAS & PIZZA
             { id: 11, category: "Pastas & Pizza", name: "Spicy Fettuccine Alfredo", price: 899, desc: "", img: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=200&q=80" },
             { id: 12, category: "Pastas & Pizza", name: "Penne Arrabbiata", price: 899, desc: "", img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=200&q=80" },
             { id: 13, category: "Pastas & Pizza", name: "Pesto Chicken Pasta", price: 899, desc: "", img: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=200&q=80" },
             { id: 14, category: "Pastas & Pizza", name: "Oven-Baked Pasta", price: 899, desc: "", img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=200&q=80" },
             { id: 15, category: "Pastas & Pizza", name: "Chicken Tikka Pizza", price: 1499, desc: "", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80" },
-
-            // BURGERS & SANDWICHES
             { id: 16, category: "Burgers & Sandwiches", name: "Jumbo Grilled Beef Burger", price: 1050, desc: "", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80" },
             { id: 17, category: "Burgers & Sandwiches", name: "Beef Smash Burger", price: 799, desc: "Crispy-edged smashed beef patty with cheese, fresh veggies and sauce", img: "https://images.unsplash.com/photo-1594212844826-9b0e0cd1b48e?w=200&q=80" },
             { id: 18, category: "Burgers & Sandwiches", name: "Grill Chicken B.B.Q Burger", price: 799, desc: "Grilled chicken with jalapeños, cheese, veggies and smoky BBQ sauce", img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200&q=80" },
             { id: 19, category: "Burgers & Sandwiches", name: "Club Sandwich", price: 899, desc: "Triple-layered sandwich with grilled chicken, fresh veggies, cheese and signature sauce", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=200&q=80" },
             { id: 20, category: "Burgers & Sandwiches", name: "Philly Steak Sandwich", price: 800, desc: "Tender chicken or beef with cheese, veggies and creamy Mexican sauce", img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=200&q=80" },
-            { id: 21, category: "Burgers & Sandwiches", name: "Chicken Panini", price: 899, desc: "Grilled chicken, cheese, fresh veggies and signature sauce pressed in toasted bread", img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=200&q=80" },
-
-            // SIGNATURE MAINS
+            { id: 21, category: "Burgers & Sandwiches", name: "Chicken Panini", price: 899, desc: "Grilled chicken, cheese, fresh veggies and signature sauce pressed in toasted bread", img: "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=200&q=80" },
             { id: 22, category: "Signature Mains", name: "Tarragon Chicken", price: 1499, desc: "Grilled chicken breast with creamy tarragon sauce and fresh vegetables", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200&q=80" },
-            { id: 23, category: "Signature Mains", name: "Moroccan Chicken", price: 1499, desc: "Tender chicken in a rich Moroccan-style sauce with aromatic spices", img: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8dd?w=200&q=80" },
-            { id: 24, category: "Signature Mains", name: "Stuffed Polo Tuscani Chicken", price: 1499, desc: "Chicken stuffed with cheese and herbs, served with a creamy Tuscan sauce", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200&q=80" },
+            { id: 23, category: "Signature Mains", name: "Moroccan Chicken", price: 1499, desc: "Tender chicken in a rich Moroccan-style sauce with aromatic spices", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80" },
+            { id: 24, category: "Signature Mains", name: "Stuffed Polo Tuscani Chicken", price: 1499, desc: "Chicken stuffed with cheese and herbs, served with a creamy Tuscan sauce", img: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8dd?w=200&q=80" },
             { id: 25, category: "Signature Mains", name: "Chef Special Lemon Butter Fish", price: 1499, desc: "Tender fish fillet served with a zesty lemon butter sauce", img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=200&q=80" },
-
-            // STEAKS
             { id: 26, category: "Steaks", name: "Chicken Mushroom Steak", price: 1499, desc: "Grilled chicken steak under a creamy mushroom sauce, served with your choice of side", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=200&q=80" },
             { id: 27, category: "Steaks", name: "Chicken Black Pepper Steak", price: 1499, desc: "Chargrilled steak in a bold cracked black pepper sauce, served with your choice of side", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80" },
             { id: 28, category: "Steaks", name: "Chicken French Onion Steak", price: 1499, desc: "Grilled steak topped with slow-caramelised onions in a rich French onion gravy", img: "https://images.unsplash.com/photo-1558030006-450675393462?w=200&q=80" },
-            { id: 29, category: "Steaks", name: "Twin Chicken Steak", price: 1499, desc: "Two grilled chicken fillets finished with our house sauce, served with your choice of side", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=200&q=80" },
-
-            // HOT DRINKS
-            { id: 30, category: "Hot Drinks", name: "Americano", price: 399, desc: "Double espresso lengthened with hot water for a clean, full-bodied cup", img: "https://images.unsplash.com/photo-1551030173-122aabc4489c?w=200&q=80" },
+            { id: 29, category: "Steaks", name: "Twin Chicken Steak", price: 1499, desc: "Two grilled chicken fillets finished with our house sauce, served with your choice of side", img: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=200&q=80" },
+            { id: 30, category: "Hot Drinks", name: "Americano", price: 399, desc: "Double espresso lengthened with hot water", img: "https://images.unsplash.com/photo-1551030173-122aabc4489c?w=200&q=80" },
             { id: 31, category: "Hot Drinks", name: "Latte", price: 550, desc: "Smooth double espresso topped with silky steamed milk", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" },
-            { id: 32, category: "Hot Drinks", name: "Kashmiri Tea", price: 450, desc: "A traditional pink tea from Kashmir, brewed with green tea leaves, milk, and spices", img: "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=200&q=80" },
+            { id: 32, category: "Hot Drinks", name: "Kashmiri Tea", price: 450, desc: "Traditional pink tea from Kashmir", img: "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=200&q=80" },
             { id: 33, category: "Hot Drinks", name: "Caramel Latte", price: 550, desc: "Classic latte swirled with buttery caramel", img: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=200&q=80" },
-            { id: 34, category: "Hot Drinks", name: "Cappuccino", price: 550, desc: "Equal parts espresso, steamed milk and velvety foam, dusted with cocoa", img: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=200&q=80" },
-            { id: 35, category: "Hot Drinks", name: "Cardamom Chai", price: 250, desc: "Fragrant black tea brewed with cardamom and other aromatic spices, often served with milk and sugar", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=200&q=80" },
-            { id: 36, category: "Hot Drinks", name: "Hazelnut Latte", price: 750, desc: "Our signature latte sweetened with warm, toasted hazelnut", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" },
-            { id: 37, category: "Hot Drinks", name: "Green Tea", price: 120, desc: "A soothing cup of warm green tea, offering a delicate and earthy flavor", img: "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=200&q=80" },
-            { id: 38, category: "Hot Drinks", name: "Karak Tea", price: 250, desc: "Strong milky tea brewed slowly with cardamom and warming spices", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=200&q=80" },
-            { id: 39, category: "Hot Drinks", name: "Spanish Latte", price: 750, desc: "Espresso and steamed milk sweetened with condensed milk for a richer, creamier cup", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" },
-            { id: 40, category: "Hot Drinks", name: "Hot Chocolate", price: 499, desc: "Rich melted chocolate steamed into milk and finished with cocoa", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=200&q=80" },
-            { id: 41, category: "Hot Drinks", name: "Pistachio Latte", price: 750, desc: "Steamed milk and espresso blended with smooth roasted pistachio", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" },
-
-            // COLD DRINKS
-            { id: 42, category: "Cold Drinks", name: "Iced Americano", price: 650, desc: "Double espresso poured over ice for a crisp, refreshing lift", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=200&q=80" },
-            { id: 43, category: "Cold Drinks", name: "Iced Latte", price: 650, desc: "Chilled espresso and fresh milk poured over ice", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" },
-            { id: 44, category: "Cold Drinks", name: "Iced Hazelnut Latte", price: 650, desc: "Iced latte sweetened with toasted hazelnut syrup", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" },
-            { id: 45, category: "Cold Drinks", name: "Iced Spanish Latte", price: 650, desc: "Iced espresso and milk sweetened with condensed milk", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" },
-            { id: 46, category: "Cold Drinks", name: "Iced Caramel Latte", price: 650, desc: "Iced latte swirled with buttery caramel", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" },
-            { id: 47, category: "Cold Drinks", name: "Vanilla Frappe", price: 650, desc: "Espresso, milk and vanilla blended with ice into a thick, frosty cup", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80" },
-            { id: 48, category: "Cold Drinks", name: "Hazelnut Frappe", price: 650, desc: "Blended iced coffee with toasted hazelnut, topped with cream", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80" },
-            { id: 49, category: "Cold Drinks", name: "Caramel Frappe", price: 650, desc: "Blended iced coffee with caramel, topped with cream", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80" },
-            { id: 50, category: "Cold Drinks", name: "Matcha", price: 650, desc: "Ceremonial-grade matcha whisked smooth with chilled milk", img: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=200&q=80" },
-            { id: 51, category: "Cold Drinks", name: "Malaysian Tea", price: 499, desc: "Sweet, frothy pulled milk tea served over ice", img: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=200&q=80" },
-
-            // MOCKTAILS
-            { id: 52, category: "Mocktails", name: "Piña Colada", price: 750, desc: "Blended pineapple and coconut cream, served frosty", img: "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?w=200&q=80" },
-            { id: 53, category: "Mocktails", name: "Mint Margarita", price: 550, desc: "Fresh mint and lime blended with ice into a sweet, tangy cooler", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&q=80" },
-            { id: 54, category: "Mocktails", name: "Strawberry Mojito", price: 499, desc: "Muddled strawberries, mint and lime topped with soda", img: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=200&q=80" },
-            { id: 55, category: "Mocktails", name: "Blackberry Mojito", price: 499, desc: "Muddled blackberries, mint and lime topped with soda", img: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=200&q=80" },
-            { id: 56, category: "Mocktails", name: "Fresh Lime", price: 200, desc: "A refreshing drink made with freshly squeezed lime", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&q=80" },
-            { id: 57, category: "Mocktails", name: "Blueberry Lemonade", price: 599, desc: "Freshly squeezed lemonade muddled with crushed blueberries", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&q=80" },
-
-            // SHAKES
-            { id: 58, category: "Shakes", name: "Oreo Shake", price: 550, desc: "Cookies blended thick into vanilla ice cream and fresh milk", img: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=200&q=80" },
-            { id: 59, category: "Shakes", name: "Banana Shake", price: 550, desc: "Ripe bananas blended with milk and ice cream", img: "https://images.unsplash.com/photo-1553787499-6f9133860278?w=200&q=80" },
-            { id: 60, category: "Shakes", name: "Strawberry Shake", price: 550, desc: "Fresh strawberries blended with ice cream and milk", img: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=200&q=80" },
-            { id: 61, category: "Shakes", name: "Mango Shake", price: 550, desc: "Sweet ripe mango blended with milk and ice cream", img: "https://images.unsplash.com/photo-1546173159-315724a31696?w=200&q=80" },
-
-            // DESSERTS
-            { id: 62, category: "Desserts", name: "Lotus Cheesecake", price: 700, desc: "Creamy cheesecake layered with Lotus Biscoff spread and a biscuit crumb", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=200&q=80" },
-            { id: 63, category: "Desserts", name: "Molten Lava With Ice Cream", price: 800, desc: "Warm chocolate pudding with a molten centre, served with vanilla ice cream", img: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=200&q=80" },
-            { id: 64, category: "Desserts", name: "Pistachio Cheesecake", price: 700, desc: "Silky cheesecake with roasted pistachio and a buttery base", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=200&q=80" },
-            { id: 65, category: "Desserts", name: "Nutella Cheesecake", price: 700, desc: "Baked cheesecake swirled with Nutella on a chocolate crumb base", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=200&q=80" },
-            { id: 66, category: "Desserts", name: "Sizzling Brownie", price: 800, desc: "Fudge brownie served on a sizzling plate with ice cream and hot chocolate sauce", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80" },
-            { id: 67, category: "Desserts", name: "Sizzling Molten Lava With Ice Cream", price: 950, desc: "Our molten lava cake brought to the table sizzling, with ice cream and warm chocolate sauce", img: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=200&q=80" },
-
-            // EXTRAS
-            { id: 68, category: "Extras", name: "Regular Drink", price: 150, desc: "A refreshing regular drink to complement your meal", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&q=80" },
-            { id: 69, category: "Extras", name: "Mineral Water 550ml", price: 120, desc: "A bottle of refreshing mineral water, 550ml", img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80" },
-            { id: 70, category: "Extras", name: "Mineral Water 330ml", price: 70, desc: "A bottle of refreshing mineral water, 330ml", img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80" }
+            { id: 34, category: "Hot Drinks", name: "Cappuccino", price: 550, desc: "Espresso, steamed milk and velvety foam", img: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=200&q=80" },
+            { id: 35, category: "Hot Drinks", name: "Cardamom Chai", price: 250, desc: "Fragrant black tea brewed with cardamom", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=200&q=80" },
+            { id: 36, category: "Hot Drinks", name: "Hazelnut Latte", price: 750, desc: "Sweetened with warm, toasted hazelnut", img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=200&q=80" },
+            { id: 37, category: "Hot Drinks", name: "Green Tea", price: 120, desc: "Soothing warm green tea", img: "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=200&q=80" },
+            { id: 38, category: "Hot Drinks", name: "Karak Tea", price: 250, desc: "Strong milky tea with spices", img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=200&q=80" },
+            { id: 39, category: "Hot Drinks", name: "Spanish Latte", price: 750, desc: "Sweetened with condensed milk", img: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=200&q=80" },
+            { id: 40, category: "Hot Drinks", name: "Hot Chocolate", price: 499, desc: "Rich melted chocolate steamed into milk", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=200&q=80" },
+            { id: 41, category: "Hot Drinks", name: "Pistachio Latte", price: 750, desc: "Blended with roasted pistachio", img: "https://images.unsplash.com/photo-1587888637140-849b25d80ef9?w=200&q=80" },
+            { id: 42, category: "Cold Drinks", name: "Iced Americano", price: 650, desc: "Double espresso over ice", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=200&q=80" },
+            { id: 43, category: "Cold Drinks", name: "Iced Latte", price: 650, desc: "Chilled espresso and fresh milk", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" },
+            { id: 44, category: "Cold Drinks", name: "Iced Hazelnut Latte", price: 650, desc: "Sweetened with toasted hazelnut", img: "https://images.unsplash.com/photo-1558122104-2b44a860f9f5?w=200&q=80" },
+            { id: 45, category: "Cold Drinks", name: "Iced Spanish Latte", price: 650, desc: "Sweetened with condensed milk", img: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=200&q=80" },
+            { id: 46, category: "Cold Drinks", name: "Iced Caramel Latte", price: 650, desc: "Swirled with buttery caramel", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" },
+            { id: 47, category: "Cold Drinks", name: "Vanilla Frappe", price: 650, desc: "Thick, frosty cup with vanilla", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80" },
+            { id: 48, category: "Cold Drinks", name: "Hazelnut Frappe", price: 650, desc: "Toasted hazelnut, topped with cream", img: "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=200&q=80" },
+            { id: 49, category: "Cold Drinks", name: "Caramel Frappe", price: 650, desc: "Iced coffee with caramel and cream", img: "https://images.unsplash.com/photo-1620360289812-0abbaaa8ab55?w=200&q=80" },
+            { id: 50, category: "Cold Drinks", name: "Matcha", price: 650, desc: "Whisked smooth with chilled milk", img: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=200&q=80" },
+            { id: 51, category: "Cold Drinks", name: "Malaysian Tea", price: 499, desc: "Sweet, frothy pulled milk tea", img: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=200&q=80" },
+            { id: 52, category: "Mocktails", name: "Piña Colada", price: 750, desc: "Pineapple and coconut cream", img: "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?w=200&q=80" },
+            { id: 53, category: "Mocktails", name: "Mint Margarita", price: 550, desc: "Fresh mint and lime blended", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&q=80" },
+            { id: 54, category: "Mocktails", name: "Strawberry Mojito", price: 499, desc: "Muddled strawberries and mint", img: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=200&q=80" },
+            { id: 55, category: "Mocktails", name: "Blackberry Mojito", price: 499, desc: "Muddled blackberries and mint", img: "https://images.unsplash.com/photo-1546171753-97d7676e4602?w=200&q=80" },
+            { id: 56, category: "Mocktails", name: "Fresh Lime", price: 200, desc: "Freshly squeezed lime", img: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=200&q=80" },
+            { id: 57, category: "Mocktails", name: "Blueberry Lemonade", price: 599, desc: "Lemonade with crushed blueberries", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=200&q=80" },
+            { id: 58, category: "Shakes", name: "Oreo Shake", price: 550, desc: "Cookies blended with ice cream", img: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=200&q=80" },
+            { id: 59, category: "Shakes", name: "Banana Shake", price: 550, desc: "Ripe bananas blended with milk", img: "https://images.unsplash.com/photo-1553787499-6f9133860278?w=200&q=80" },
+            { id: 60, category: "Shakes", name: "Strawberry Shake", price: 550, desc: "Fresh strawberries and ice cream", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80" },
+            { id: 61, category: "Shakes", name: "Mango Shake", price: 550, desc: "Sweet ripe mango blended with milk", img: "https://images.unsplash.com/photo-1546173159-315724a31696?w=200&q=80" },
+            { id: 62, category: "Desserts", name: "Lotus Cheesecake", price: 700, desc: "Layered with Lotus Biscoff spread", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=200&q=80" },
+            { id: 63, category: "Desserts", name: "Molten Lava With Ice Cream", price: 800, desc: "Warm chocolate pudding and vanilla ice cream", img: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=200&q=80" },
+            { id: 64, category: "Desserts", name: "Pistachio Cheesecake", price: 700, desc: "Silky cheesecake with roasted pistachio", img: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=200&q=80" },
+            { id: 65, category: "Desserts", name: "Nutella Cheesecake", price: 700, desc: "Swirled with Nutella", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80" },
+            { id: 66, category: "Desserts", name: "Sizzling Brownie", price: 800, desc: "Fudge brownie with hot chocolate sauce", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80" },
+            { id: 67, category: "Desserts", name: "Sizzling Molten Lava", price: 950, desc: "Molten lava cake with ice cream", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80" },
+            { id: 68, category: "Extras", name: "Regular Drink", price: 150, desc: "Refreshing soft drink", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&q=80" },
+            { id: 69, category: "Extras", name: "Mineral Water 550ml", price: 120, desc: "Refreshing mineral water", img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80" },
+            { id: 70, category: "Extras", name: "Mineral Water 330ml", price: 70, desc: "Refreshing mineral water", img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80" }
         ];
 
+        let MENU = JSON.parse(localStorage.getItem('resonanceMenu')) || defaultMenu;
         let cart = {};
         let currentCategory = "All";
         let searchQuery = "";
         const formatMoney = num => CURRENCY + num.toLocaleString();
 
-        const categories = ["All", ...new Set(MENU.map(item => item.category))];
+        function getCategories() {
+            return ["All", ...new Set(MENU.map(item => item.category))];
+        }
 
         function renderTabs() {
             const tabsContainer = document.getElementById("tabs-container");
             tabsContainer.innerHTML = "";
-            categories.forEach(cat => {
+            getCategories().forEach(cat => {
                 const btn = document.createElement("button");
                 btn.className = `tab ${currentCategory === cat ? 'active' : ''}`;
                 btn.textContent = cat;
@@ -362,7 +404,7 @@
                 div.style.animationDelay = `${index * 0.05}s`;
                 
                 div.innerHTML = `
-                    <img src="${item.img}" alt="${item.name}" class="item-img" onerror="this.src='https://via.placeholder.com/80?text=Food'">
+                    <img src="${item.img}" alt="${item.name}" class="item-img" onerror="this.src='https://placehold.co/100x100?text=Food'">
                     <div class="item-info">
                         <div class="item-name">${item.name}</div>
                         ${item.desc ? `<div class="item-desc">${item.desc}</div>` : ''}
@@ -398,7 +440,6 @@
                     `;
                 }
             }
-            
             updateCartUI();
         }
 
@@ -436,7 +477,6 @@
                     modalList.appendChild(row);
                 });
             }
-            
             document.getElementById("modal-total").textContent = formatMoney(totalPrice);
         }
 
@@ -450,28 +490,20 @@
         }
 
         function closeModalOnOutsideClick(event) {
-            if (event.target.id === "modal") {
-                closeModal();
-            }
+            if (event.target.id === "modal") closeModal();
         }
 
-        // --- SEND ORDER ---
         function sendOrder() {
             if (Object.keys(cart).length === 0) return;
-
             const name = document.getElementById("customer-name").value.trim();
             const location = document.getElementById("customer-location").value.trim();
             const notes = document.getElementById("customer-notes").value.trim();
             const totalPrice = Object.values(cart).reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-            let lines = [];
-            lines.push(`*NEW ORDER - ${CAFE_NAME}*`);
-            lines.push("----------------");
-            
+            let lines = [`*NEW ORDER - ${CAFE_NAME}*`, "----------------"];
             Object.values(cart).forEach(item => {
                 lines.push(`• ${item.qty}x ${item.name} - ${formatMoney(item.price * item.qty)}`);
             });
-            
             lines.push("----------------");
             lines.push(`*TOTAL: ${formatMoney(totalPrice)}*`);
             
@@ -481,18 +513,13 @@
                 if (location) lines.push(`*Location:* ${location}`);
                 if (notes) lines.push(`*Notes:* ${notes}`);
             }
-
             const text = lines.join("\n");
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-            
-            window.location.href = url;
+            window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
         }
 
-        // --- SEND REMINDER ---
         function sendReminder() {
             const text = `*ORDER REMINDER - ${CAFE_NAME}*\n\nHi, I placed an order a while ago and haven't received it yet. Could you please check on it? Thank you.`;
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-            window.location.href = url;
+            window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
         }
 
         document.getElementById("search").addEventListener("input", (e) => {
@@ -504,9 +531,165 @@
             renderMenu();
         });
 
+        // ==========================================
+        // ADMIN PANEL LOGIC & AUTO-DEPLOY
+        // ==========================================
+        
+        function promptAdmin() {
+            const pass = prompt("Enter Admin Password:");
+            if (pass === ADMIN_PASSWORD) {
+                document.getElementById("admin-panel").classList.add("active");
+                renderAdminTable();
+                document.getElementById("gh-token").value = localStorage.getItem('ghToken') || '';
+                document.getElementById("gh-repo").value = localStorage.getItem('ghRepo') || '';
+            } else if (pass !== null) {
+                alert("Incorrect password.");
+            }
+        }
+
+        function closeAdmin() {
+            document.getElementById("admin-panel").classList.remove("active");
+        }
+
+        function saveGitHubSettings() {
+            localStorage.setItem('ghToken', document.getElementById('gh-token').value.trim());
+            localStorage.setItem('ghRepo', document.getElementById('gh-repo').value.trim());
+            alert("GitHub settings saved locally! You can now use the 'Save & Deploy' button.");
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById("admin-table-body");
+            tbody.innerHTML = "";
+            MENU.forEach(item => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${item.name} <br><small style="color:#888">${item.category}</small></td>
+                    <td>${item.price}</td>
+                    <td>
+                        <button class="admin-btn" style="padding: 5px 10px; font-size:12px;" onclick="editItem(${item.id})">Edit</button>
+                        <button class="admin-btn admin-btn-danger" style="padding: 5px 10px; font-size:12px;" onclick="deleteItem(${item.id})">Del</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function saveToLocalStorage() {
+            localStorage.setItem('resonanceMenu', JSON.stringify(MENU));
+            renderTabs();
+            renderMenu();
+            renderAdminTable();
+        }
+
+        function deleteItem(id) {
+            if(confirm("Are you sure you want to delete this item? (Remember to click Deploy after)")) {
+                MENU = MENU.filter(item => item.id !== id);
+                saveToLocalStorage();
+            }
+        }
+
+        function editItem(id) {
+            const item = MENU.find(i => i.id === id);
+            if(!item) return;
+
+            const newName = prompt("Edit Name:", item.name);
+            if(newName === null) return;
+            const newPrice = prompt("Edit Price (number):", item.price);
+            if(newPrice === null) return;
+            const newDesc = prompt("Edit Description:", item.desc || "");
+            if(newDesc === null) return;
+            const newImg = prompt("Edit Image URL:", item.img);
+            if(newImg === null) return;
+            
+            item.name = newName;
+            item.price = Number(newPrice) || item.price;
+            item.desc = newDesc;
+            item.img = newImg;
+
+            saveToLocalStorage();
+        }
+
+        function addNewItem() {
+            const name = document.getElementById("new-name").value.trim();
+            const category = document.getElementById("new-category").value;
+            const price = Number(document.getElementById("new-price").value);
+            const desc = document.getElementById("new-desc").value.trim();
+            const img = document.getElementById("new-img").value.trim() || "https://placehold.co/100x100?text=Food";
+
+            if(!name || !price) { alert("Please fill in Name and Price."); return; }
+
+            const newId = MENU.length > 0 ? Math.max(...MENU.map(i => i.id)) + 1 : 1;
+            MENU.push({ id: newId, category, name, price, desc, img });
+            
+            document.getElementById("new-name").value = "";
+            document.getElementById("new-price").value = "";
+            document.getElementById("new-desc").value = "";
+            document.getElementById("new-img").value = "";
+
+            saveToLocalStorage();
+            alert("Item added to local preview! Click 'Save & Deploy' below to publish.");
+        }
+
+        async function deployToGitHub() {
+            const token = localStorage.getItem('ghToken');
+            const repo = localStorage.getItem('ghRepo'); 
+            
+            if (!token || !repo) {
+                alert("Please enter your GitHub Token and Repository name in the green box above, then click 'Save GitHub Info'.");
+                return;
+            }
+
+            const btn = document.getElementById('deploy-btn');
+            btn.textContent = "Deploying to GitHub... Please wait";
+            btn.disabled = true;
+
+            try {
+                const url = `https://api.github.com/repos/${repo}/contents/index.html`;
+                const response = await fetch(url, {
+                    headers: { Authorization: `token ${token}` }
+                });
+                
+                if (!response.ok) throw new Error("Could not find the repository. Check your username/repo format.");
+                
+                const data = await response.json();
+                const content = decodeURIComponent(escape(atob(data.content))); 
+                
+                const regex = /const defaultMenu = \[[\s\S]*?\];/;
+                const newMenuString = `const defaultMenu = ${JSON.stringify(MENU, null, 4)};`;
+                
+                if (!regex.test(content)) throw new Error("Could not find 'const defaultMenu = [...]' in the code.");
+                
+                const updatedContent = content.replace(regex, newMenuString);
+                
+                const commitResponse = await fetch(url, {
+                    method: 'PUT',
+                    headers: { 
+                        Authorization: `token ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: 'Auto-update menu from Admin Panel',
+                        content: btoa(unescape(encodeURIComponent(updatedContent))), 
+                        sha: data.sha
+                    })
+                });
+
+                if (!commitResponse.ok) throw new Error("Failed to save to GitHub.");
+                
+                alert("Success! 🎉\n\nYour menu has been sent to GitHub. Your live website is now updating automatically. This usually takes about 15-30 seconds.");
+                btn.textContent = "Save & Deploy to Live Site";
+                btn.disabled = false;
+                
+            } catch (error) {
+                console.error(error);
+                alert("Deploy failed: " + error.message + "\n\nMake sure your Token has 'repo' permissions and the Repo name is correct (e.g., username/cafe-menu).");
+                btn.textContent = "Save & Deploy to Live Site";
+                btn.disabled = false;
+            }
+        }
+
         renderTabs();
         renderMenu();
-        
     </script>
 </body>
 </html>
