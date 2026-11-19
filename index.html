@@ -286,77 +286,575 @@
 
         // --- Full Menu Data ---
         const defaultMenu = [
-            { id: 1, category: "Breakfast", name: "Pakistani Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=200&q=80" },
-            { id: 2, category: "Breakfast", name: "Mexican Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1494597564530-871f2b93ac55?w=200&q=80" },
-            { id: 3, category: "Breakfast", name: "Cheese Omelette", price: 499, desc: "", img: "https://images.unsplash.com/photo-1510693261006-223863692fb0?w=200&q=80" },
-            { id: 4, category: "Breakfast", name: "French Toast", price: 800, desc: "", img: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=200&q=80" },
-            { id: 5, category: "Breakfast", name: "2 Bread Slices", price: 50, desc: "", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200&q=80" },
-            { id: 6, category: "Starters", name: "Chicken Caesar Salad", price: 799, desc: "", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&q=80" },
-            { id: 7, category: "Starters", name: "Cream of Mushroom Soup", price: 550, desc: "", img: "https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=80" },
-            { id: 8, category: "Starters", name: "Fish Finger with Fries", price: 699, desc: "", img: "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=200&q=80" },
-            { id: 9, category: "Starters", name: "Plain Fries", price: 499, desc: "", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=200&q=80" },
-            { id: 10, category: "Starters", name: "Chef Masala Fries", price: 599, desc: "", img: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=200&q=80" },
-            { id: 11, category: "Pastas & Pizza", name: "Spicy Fettuccine Alfredo", price: 899, desc: "", img: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=200&q=80" },
-            { id: 12, category: "Pastas & Pizza", name: "Penne Arrabbiata", price: 899, desc: "", img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=200&q=80" },
-            { id: 13, category: "Pastas & Pizza", name: "Pesto Chicken Pasta", price: 899, desc: "", img: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=200&q=80" },
-            { id: 14, category: "Pastas & Pizza", name: "Oven-Baked Pasta", price: 899, desc: "", img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=200&q=80" },
-            { id: 15, category: "Pastas & Pizza", name: "Chicken Tikka Pizza", price: 1499, desc: "", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80" },
-            { id: 16, category: "Burgers & Sandwiches", name: "Jumbo Grilled Beef Burger", price: 1050, desc: "", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80" },
-            { id: 17, category: "Burgers & Sandwiches", name: "Beef Smash Burger", price: 799, desc: "Crispy-edged smashed beef patty with cheese, fresh veggies and sauce", img: "https://images.unsplash.com/photo-1594212844826-9b0e0cd1b48e?w=200&q=80" },
-            { id: 18, category: "Burgers & Sandwiches", name: "Grill Chicken B.B.Q Burger", price: 799, desc: "Grilled chicken with jalapeños, cheese, veggies and smoky BBQ sauce", img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200&q=80" },
-            { id: 19, category: "Burgers & Sandwiches", name: "Club Sandwich", price: 899, desc: "Triple-layered sandwich with grilled chicken, fresh veggies, cheese and signature sauce", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=200&q=80" },
-            { id: 20, category: "Burgers & Sandwiches", name: "Philly Steak Sandwich", price: 800, desc: "Tender chicken or beef with cheese, veggies and creamy Mexican sauce", img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=200&q=80" },
-            { id: 21, category: "Burgers & Sandwiches", name: "Chicken Panini", price: 899, desc: "Grilled chicken, cheese, fresh veggies and signature sauce pressed in toasted bread", img: "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=200&q=80" },
-            { id: 22, category: "Signature Mains", name: "Tarragon Chicken", price: 1499, desc: "Grilled chicken breast with creamy tarragon sauce and fresh vegetables", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200&q=80" },
-            { id: 23, category: "Signature Mains", name: "Moroccan Chicken", price: 1499, desc: "Tender chicken in a rich Moroccan-style sauce with aromatic spices", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80" },
-            { id: 24, category: "Signature Mains", name: "Stuffed Polo Tuscani Chicken", price: 1499, desc: "Chicken stuffed with cheese and herbs, served with a creamy Tuscan sauce", img: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8dd?w=200&q=80" },
-            { id: 25, category: "Signature Mains", name: "Chef Special Lemon Butter Fish", price: 1499, desc: "Tender fish fillet served with a zesty lemon butter sauce", img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=200&q=80" },
-            { id: 26, category: "Steaks", name: "Chicken Mushroom Steak", price: 1499, desc: "Grilled chicken steak under a creamy mushroom sauce, served with your choice of side", img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=200&q=80" },
-            { id: 27, category: "Steaks", name: "Chicken Black Pepper Steak", price: 1499, desc: "Chargrilled steak in a bold cracked black pepper sauce, served with your choice of side", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80" },
-            { id: 28, category: "Steaks", name: "Chicken French Onion Steak", price: 1499, desc: "Grilled steak topped with slow-caramelised onions in a rich French onion gravy", img: "https://images.unsplash.com/photo-1558030006-450675393462?w=200&q=80" },
-            { id: 29, category: "Steaks", name: "Twin Chicken Steak", price: 1499, desc: "Two grilled chicken fillets finished with our house sauce, served with your choice of side", img: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=200&q=80" },
-            { id: 30, category: "Hot Drinks", name: "Americano", price: 399, desc: "Double espresso lengthened with hot water", img: "https://images.unsplash.com/photo-1551030173-122aabc4489c?w=200&q=80" },
-            { id: 31, category: "Hot Drinks", name: "Latte", price: 550, desc: "Smooth double espresso topped with silky steamed milk", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" },
-            { id: 32, category: "Hot Drinks", name: "Kashmiri Tea", price: 450, desc: "Traditional pink tea from Kashmir", img: "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=200&q=80" },
-            { id: 33, category: "Hot Drinks", name: "Caramel Latte", price: 550, desc: "Classic latte swirled with buttery caramel", img: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=200&q=80" },
-            { id: 34, category: "Hot Drinks", name: "Cappuccino", price: 550, desc: "Espresso, steamed milk and velvety foam", img: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=200&q=80" },
-            { id: 35, category: "Hot Drinks", name: "Cardamom Chai", price: 250, desc: "Fragrant black tea brewed with cardamom", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=200&q=80" },
-            { id: 36, category: "Hot Drinks", name: "Hazelnut Latte", price: 750, desc: "Sweetened with warm, toasted hazelnut", img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=200&q=80" },
-            { id: 37, category: "Hot Drinks", name: "Green Tea", price: 120, desc: "Soothing warm green tea", img: "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=200&q=80" },
-            { id: 38, category: "Hot Drinks", name: "Karak Tea", price: 250, desc: "Strong milky tea with spices", img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=200&q=80" },
-            { id: 39, category: "Hot Drinks", name: "Spanish Latte", price: 750, desc: "Sweetened with condensed milk", img: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=200&q=80" },
-            { id: 40, category: "Hot Drinks", name: "Hot Chocolate", price: 499, desc: "Rich melted chocolate steamed into milk", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=200&q=80" },
-            { id: 41, category: "Hot Drinks", name: "Pistachio Latte", price: 750, desc: "Blended with roasted pistachio", img: "https://images.unsplash.com/photo-1587888637140-849b25d80ef9?w=200&q=80" },
-            { id: 42, category: "Cold Drinks", name: "Iced Americano", price: 650, desc: "Double espresso over ice", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=200&q=80" },
-            { id: 43, category: "Cold Drinks", name: "Iced Latte", price: 650, desc: "Chilled espresso and fresh milk", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" },
-            { id: 44, category: "Cold Drinks", name: "Iced Hazelnut Latte", price: 650, desc: "Sweetened with toasted hazelnut", img: "https://images.unsplash.com/photo-1558122104-2b44a860f9f5?w=200&q=80" },
-            { id: 45, category: "Cold Drinks", name: "Iced Spanish Latte", price: 650, desc: "Sweetened with condensed milk", img: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=200&q=80" },
-            { id: 46, category: "Cold Drinks", name: "Iced Caramel Latte", price: 650, desc: "Swirled with buttery caramel", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" },
-            { id: 47, category: "Cold Drinks", name: "Vanilla Frappe", price: 650, desc: "Thick, frosty cup with vanilla", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80" },
-            { id: 48, category: "Cold Drinks", name: "Hazelnut Frappe", price: 650, desc: "Toasted hazelnut, topped with cream", img: "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=200&q=80" },
-            { id: 49, category: "Cold Drinks", name: "Caramel Frappe", price: 650, desc: "Iced coffee with caramel and cream", img: "https://images.unsplash.com/photo-1620360289812-0abbaaa8ab55?w=200&q=80" },
-            { id: 50, category: "Cold Drinks", name: "Matcha", price: 650, desc: "Whisked smooth with chilled milk", img: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=200&q=80" },
-            { id: 51, category: "Cold Drinks", name: "Malaysian Tea", price: 499, desc: "Sweet, frothy pulled milk tea", img: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=200&q=80" },
-            { id: 52, category: "Mocktails", name: "Piña Colada", price: 750, desc: "Pineapple and coconut cream", img: "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?w=200&q=80" },
-            { id: 53, category: "Mocktails", name: "Mint Margarita", price: 550, desc: "Fresh mint and lime blended", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&q=80" },
-            { id: 54, category: "Mocktails", name: "Strawberry Mojito", price: 499, desc: "Muddled strawberries and mint", img: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=200&q=80" },
-            { id: 55, category: "Mocktails", name: "Blackberry Mojito", price: 499, desc: "Muddled blackberries and mint", img: "https://images.unsplash.com/photo-1546171753-97d7676e4602?w=200&q=80" },
-            { id: 56, category: "Mocktails", name: "Fresh Lime", price: 200, desc: "Freshly squeezed lime", img: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=200&q=80" },
-            { id: 57, category: "Mocktails", name: "Blueberry Lemonade", price: 599, desc: "Lemonade with crushed blueberries", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=200&q=80" },
-            { id: 58, category: "Shakes", name: "Oreo Shake", price: 550, desc: "Cookies blended with ice cream", img: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=200&q=80" },
-            { id: 59, category: "Shakes", name: "Banana Shake", price: 550, desc: "Ripe bananas blended with milk", img: "https://images.unsplash.com/photo-1553787499-6f9133860278?w=200&q=80" },
-            { id: 60, category: "Shakes", name: "Strawberry Shake", price: 550, desc: "Fresh strawberries and ice cream", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80" },
-            { id: 61, category: "Shakes", name: "Mango Shake", price: 550, desc: "Sweet ripe mango blended with milk", img: "https://images.unsplash.com/photo-1546173159-315724a31696?w=200&q=80" },
-            { id: 62, category: "Desserts", name: "Lotus Cheesecake", price: 700, desc: "Layered with Lotus Biscoff spread", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=200&q=80" },
-            { id: 63, category: "Desserts", name: "Molten Lava With Ice Cream", price: 800, desc: "Warm chocolate pudding and vanilla ice cream", img: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=200&q=80" },
-            { id: 64, category: "Desserts", name: "Pistachio Cheesecake", price: 700, desc: "Silky cheesecake with roasted pistachio", img: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=200&q=80" },
-            { id: 65, category: "Desserts", name: "Nutella Cheesecake", price: 700, desc: "Swirled with Nutella", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80" },
-            { id: 66, category: "Desserts", name: "Sizzling Brownie", price: 800, desc: "Fudge brownie with hot chocolate sauce", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80" },
-            { id: 67, category: "Desserts", name: "Sizzling Molten Lava", price: 950, desc: "Molten lava cake with ice cream", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80" },
-            { id: 68, category: "Extras", name: "Regular Drink", price: 150, desc: "Refreshing soft drink", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&q=80" },
-            { id: 69, category: "Extras", name: "Mineral Water 550ml", price: 120, desc: "Refreshing mineral water", img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80" },
-            { id: 70, category: "Extras", name: "Mineral Water 330ml", price: 70, desc: "Refreshing mineral water", img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80" }
-        ];
+    {
+        "id": 1,
+        "category": "Breakfast",
+        "name": "Pakistani Omelette",
+        "price": 499,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=200&q=80"
+    },
+    {
+        "id": 2,
+        "category": "Breakfast",
+        "name": "Mexican Omelette",
+        "price": 499,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1494597564530-871f2b93ac55?w=200&q=80"
+    },
+    {
+        "id": 3,
+        "category": "Breakfast",
+        "name": "Cheese Omelette",
+        "price": 499,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1510693261006-223863692fb0?w=200&q=80"
+    },
+    {
+        "id": 4,
+        "category": "Breakfast",
+        "name": "French Toast",
+        "price": 800,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=200&q=80"
+    },
+    {
+        "id": 5,
+        "category": "Breakfast",
+        "name": "2 Bread Slices",
+        "price": 50,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200&q=80"
+    },
+    {
+        "id": 6,
+        "category": "Starters",
+        "name": "Chicken Caesar Salad",
+        "price": 799,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&q=80"
+    },
+    {
+        "id": 7,
+        "category": "Starters",
+        "name": "Cream of Mushroom Soup",
+        "price": 550,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=80"
+    },
+    {
+        "id": 8,
+        "category": "Starters",
+        "name": "Fish Finger with Fries",
+        "price": 699,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=200&q=80"
+    },
+    {
+        "id": 9,
+        "category": "Starters",
+        "name": "Plain Fries",
+        "price": 499,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=200&q=80"
+    },
+    {
+        "id": 10,
+        "category": "Starters",
+        "name": "Chef Masala Fries",
+        "price": 599,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=200&q=80"
+    },
+    {
+        "id": 11,
+        "category": "Pastas & Pizza",
+        "name": "Spicy Fettuccine Alfredo",
+        "price": 899,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=200&q=80"
+    },
+    {
+        "id": 12,
+        "category": "Pastas & Pizza",
+        "name": "Penne Arrabbiata",
+        "price": 899,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=200&q=80"
+    },
+    {
+        "id": 13,
+        "category": "Pastas & Pizza",
+        "name": "Pesto Chicken Pasta",
+        "price": 899,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=200&q=80"
+    },
+    {
+        "id": 14,
+        "category": "Pastas & Pizza",
+        "name": "Oven-Baked Pasta",
+        "price": 899,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=200&q=80"
+    },
+    {
+        "id": 15,
+        "category": "Pastas & Pizza",
+        "name": "Chicken Tikka Pizza",
+        "price": 1499,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80"
+    },
+    {
+        "id": 16,
+        "category": "Burgers & Sandwiches",
+        "name": "Jumbo Grilled Beef Burger",
+        "price": 1050,
+        "desc": "",
+        "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80"
+    },
+    {
+        "id": 17,
+        "category": "Burgers & Sandwiches",
+        "name": "Beef Smash Burger",
+        "price": 799,
+        "desc": "Crispy-edged smashed beef patty with cheese, fresh veggies and sauce",
+        "img": "https://images.unsplash.com/photo-1594212844826-9b0e0cd1b48e?w=200&q=80"
+    },
+    {
+        "id": 18,
+        "category": "Burgers & Sandwiches",
+        "name": "Grill Chicken B.B.Q Burger",
+        "price": 799,
+        "desc": "Grilled chicken with jalapeños, cheese, veggies and smoky BBQ sauce",
+        "img": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200&q=80"
+    },
+    {
+        "id": 19,
+        "category": "Burgers & Sandwiches",
+        "name": "Club Sandwich",
+        "price": 899,
+        "desc": "Triple-layered sandwich with grilled chicken, fresh veggies, cheese and signature sauce",
+        "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=200&q=80"
+    },
+    {
+        "id": 20,
+        "category": "Burgers & Sandwiches",
+        "name": "Philly Steak Sandwich",
+        "price": 800,
+        "desc": "Tender chicken or beef with cheese, veggies and creamy Mexican sauce",
+        "img": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=200&q=80"
+    },
+    {
+        "id": 21,
+        "category": "Burgers & Sandwiches",
+        "name": "Chicken Panini",
+        "price": 899,
+        "desc": "Grilled chicken, cheese, fresh veggies and signature sauce pressed in toasted bread",
+        "img": "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=200&q=80"
+    },
+    {
+        "id": 22,
+        "category": "Signature Mains",
+        "name": "Tarragon Chicken",
+        "price": 1499,
+        "desc": "Grilled chicken breast with creamy tarragon sauce and fresh vegetables",
+        "img": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200&q=80"
+    },
+    {
+        "id": 23,
+        "category": "Signature Mains",
+        "name": "Moroccan Chicken",
+        "price": 1499,
+        "desc": "Tender chicken in a rich Moroccan-style sauce with aromatic spices",
+        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80"
+    },
+    {
+        "id": 24,
+        "category": "Signature Mains",
+        "name": "Stuffed Polo Tuscani Chicken",
+        "price": 1499,
+        "desc": "Chicken stuffed with cheese and herbs, served with a creamy Tuscan sauce",
+        "img": "https://images.unsplash.com/photo-1598514982205-f36b96d1e8dd?w=200&q=80"
+    },
+    {
+        "id": 25,
+        "category": "Signature Mains",
+        "name": "Chef Special Lemon Butter Fish",
+        "price": 1499,
+        "desc": "Tender fish fillet served with a zesty lemon butter sauce",
+        "img": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=200&q=80"
+    },
+    {
+        "id": 26,
+        "category": "Steaks",
+        "name": "Chicken Mushroom Steak",
+        "price": 1499,
+        "desc": "Grilled chicken steak under a creamy mushroom sauce, served with your choice of side",
+        "img": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=200&q=80"
+    },
+    {
+        "id": 27,
+        "category": "Steaks",
+        "name": "Chicken Black Pepper Steak",
+        "price": 1499,
+        "desc": "Chargrilled steak in a bold cracked black pepper sauce, served with your choice of side",
+        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80"
+    },
+    {
+        "id": 28,
+        "category": "Steaks",
+        "name": "Chicken French Onion Steak",
+        "price": 1499,
+        "desc": "Grilled steak topped with slow-caramelised onions in a rich French onion gravy",
+        "img": "https://images.unsplash.com/photo-1558030006-450675393462?w=200&q=80"
+    },
+    {
+        "id": 29,
+        "category": "Steaks",
+        "name": "Twin Chicken Steak",
+        "price": 1499,
+        "desc": "Two grilled chicken fillets finished with our house sauce, served with your choice of side",
+        "img": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=200&q=80"
+    },
+    {
+        "id": 30,
+        "category": "Hot Drinks",
+        "name": "Americano",
+        "price": 399,
+        "desc": "Double espresso lengthened with hot water",
+        "img": "https://images.unsplash.com/photo-1551030173-122aabc4489c?w=200&q=80"
+    },
+    {
+        "id": 31,
+        "category": "Hot Drinks",
+        "name": "Latte",
+        "price": 550,
+        "desc": "Smooth double espresso topped with silky steamed milk",
+        "img": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80"
+    },
+    {
+        "id": 32,
+        "category": "Hot Drinks",
+        "name": "Kashmiri Tea",
+        "price": 450,
+        "desc": "Traditional pink tea from Kashmir",
+        "img": "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=200&q=80"
+    },
+    {
+        "id": 33,
+        "category": "Hot Drinks",
+        "name": "Caramel Latte",
+        "price": 550,
+        "desc": "Classic latte swirled with buttery caramel",
+        "img": "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=200&q=80"
+    },
+    {
+        "id": 34,
+        "category": "Hot Drinks",
+        "name": "Cappuccino",
+        "price": 550,
+        "desc": "Espresso, steamed milk and velvety foam",
+        "img": "https://images.unsplash.com/photo-1534778101976-62847782c213?w=200&q=80"
+    },
+    {
+        "id": 35,
+        "category": "Hot Drinks",
+        "name": "Cardamom Chai",
+        "price": 250,
+        "desc": "Fragrant black tea brewed with cardamom",
+        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=200&q=80"
+    },
+    {
+        "id": 36,
+        "category": "Hot Drinks",
+        "name": "Hazelnut Latte",
+        "price": 750,
+        "desc": "Sweetened with warm, toasted hazelnut",
+        "img": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=200&q=80"
+    },
+    {
+        "id": 37,
+        "category": "Hot Drinks",
+        "name": "Green Tea",
+        "price": 120,
+        "desc": "Soothing warm green tea",
+        "img": "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=200&q=80"
+    },
+    {
+        "id": 38,
+        "category": "Hot Drinks",
+        "name": "Karak Tea",
+        "price": 250,
+        "desc": "Strong milky tea with spices",
+        "img": "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=200&q=80"
+    },
+    {
+        "id": 39,
+        "category": "Hot Drinks",
+        "name": "Spanish Latte",
+        "price": 750,
+        "desc": "Sweetened with condensed milk",
+        "img": "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=200&q=80"
+    },
+    {
+        "id": 40,
+        "category": "Hot Drinks",
+        "name": "Hot Chocolate",
+        "price": 499,
+        "desc": "Rich melted chocolate steamed into milk",
+        "img": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=200&q=80"
+    },
+    {
+        "id": 41,
+        "category": "Hot Drinks",
+        "name": "Pistachio Latte",
+        "price": 750,
+        "desc": "Blended with roasted pistachio",
+        "img": "https://images.unsplash.com/photo-1587888637140-849b25d80ef9?w=200&q=80"
+    },
+    {
+        "id": 42,
+        "category": "Cold Drinks",
+        "name": "Iced Americano",
+        "price": 650,
+        "desc": "Double espresso over ice",
+        "img": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=200&q=80"
+    },
+    {
+        "id": 43,
+        "category": "Cold Drinks",
+        "name": "Iced Latte",
+        "price": 650,
+        "desc": "Chilled espresso and fresh milk",
+        "img": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80"
+    },
+    {
+        "id": 44,
+        "category": "Cold Drinks",
+        "name": "Iced Hazelnut Latte",
+        "price": 650,
+        "desc": "Sweetened with toasted hazelnut",
+        "img": "https://images.unsplash.com/photo-1558122104-2b44a860f9f5?w=200&q=80"
+    },
+    {
+        "id": 45,
+        "category": "Cold Drinks",
+        "name": "Iced Spanish Latte",
+        "price": 650,
+        "desc": "Sweetened with condensed milk",
+        "img": "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=200&q=80"
+    },
+    {
+        "id": 46,
+        "category": "Cold Drinks",
+        "name": "Iced Caramel Latte",
+        "price": 650,
+        "desc": "Swirled with buttery caramel",
+        "img": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80"
+    },
+    {
+        "id": 47,
+        "category": "Cold Drinks",
+        "name": "Vanilla Frappe",
+        "price": 650,
+        "desc": "Thick, frosty cup with vanilla",
+        "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80"
+    },
+    {
+        "id": 48,
+        "category": "Cold Drinks",
+        "name": "Hazelnut Frappe",
+        "price": 650,
+        "desc": "Toasted hazelnut, topped with cream",
+        "img": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=200&q=80"
+    },
+    {
+        "id": 49,
+        "category": "Cold Drinks",
+        "name": "Caramel Frappe",
+        "price": 650,
+        "desc": "Iced coffee with caramel and cream",
+        "img": "https://images.unsplash.com/photo-1620360289812-0abbaaa8ab55?w=200&q=80"
+    },
+    {
+        "id": 50,
+        "category": "Cold Drinks",
+        "name": "Matcha",
+        "price": 650,
+        "desc": "Whisked smooth with chilled milk",
+        "img": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=200&q=80"
+    },
+    {
+        "id": 51,
+        "category": "Cold Drinks",
+        "name": "Malaysian Tea",
+        "price": 499,
+        "desc": "Sweet, frothy pulled milk tea",
+        "img": "https://images.unsplash.com/photo-1558857563-b371033873b8?w=200&q=80"
+    },
+    {
+        "id": 52,
+        "category": "Mocktails",
+        "name": "Piña Colada",
+        "price": 750,
+        "desc": "Pineapple and coconut cream",
+        "img": "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?w=200&q=80"
+    },
+    {
+        "id": 53,
+        "category": "Mocktails",
+        "name": "Mint Margarita",
+        "price": 550,
+        "desc": "Fresh mint and lime blended",
+        "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&q=80"
+    },
+    {
+        "id": 54,
+        "category": "Mocktails",
+        "name": "Strawberry Mojito",
+        "price": 499,
+        "desc": "Muddled strawberries and mint",
+        "img": "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=200&q=80"
+    },
+    {
+        "id": 55,
+        "category": "Mocktails",
+        "name": "Blackberry Mojito",
+        "price": 499,
+        "desc": "Muddled blackberries and mint",
+        "img": "https://images.unsplash.com/photo-1546171753-97d7676e4602?w=200&q=80"
+    },
+    {
+        "id": 56,
+        "category": "Mocktails",
+        "name": "Fresh Lime",
+        "price": 200,
+        "desc": "Freshly squeezed lime",
+        "img": "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=200&q=80"
+    },
+    {
+        "id": 57,
+        "category": "Mocktails",
+        "name": "Blueberry Lemonade",
+        "price": 599,
+        "desc": "Lemonade with crushed blueberries",
+        "img": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=200&q=80"
+    },
+    {
+        "id": 58,
+        "category": "Shakes",
+        "name": "Oreo Shake",
+        "price": 550,
+        "desc": "Cookies blended with ice cream",
+        "img": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=200&q=80"
+    },
+    {
+        "id": 59,
+        "category": "Shakes",
+        "name": "Banana Shake",
+        "price": 550,
+        "desc": "Ripe bananas blended with milk",
+        "img": "https://images.unsplash.com/photo-1553787499-6f9133860278?w=200&q=80"
+    },
+    {
+        "id": 60,
+        "category": "Shakes",
+        "name": "Strawberry Shake",
+        "price": 550,
+        "desc": "Fresh strawberries and ice cream",
+        "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&q=80"
+    },
+    {
+        "id": 61,
+        "category": "Shakes",
+        "name": "Mango Shake",
+        "price": 550,
+        "desc": "Sweet ripe mango blended with milk",
+        "img": "https://images.unsplash.com/photo-1546173159-315724a31696?w=200&q=80"
+    },
+    {
+        "id": 62,
+        "category": "Desserts",
+        "name": "Lotus Cheesecake",
+        "price": 700,
+        "desc": "Layered with Lotus Biscoff spread",
+        "img": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=200&q=80"
+    },
+    {
+        "id": 63,
+        "category": "Desserts",
+        "name": "Molten Lava With Ice Cream",
+        "price": 800,
+        "desc": "Warm chocolate pudding and vanilla ice cream",
+        "img": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=200&q=80"
+    },
+    {
+        "id": 64,
+        "category": "Desserts",
+        "name": "Pistachio Cheesecake",
+        "price": 700,
+        "desc": "Silky cheesecake with roasted pistachio",
+        "img": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=200&q=80"
+    },
+    {
+        "id": 65,
+        "category": "Desserts",
+        "name": "Nutella Cheesecake",
+        "price": 700,
+        "desc": "Swirled with Nutella",
+        "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80"
+    },
+    {
+        "id": 66,
+        "category": "Desserts",
+        "name": "Sizzling Brownie",
+        "price": 800,
+        "desc": "Fudge brownie with hot chocolate sauce",
+        "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80"
+    },
+    {
+        "id": 67,
+        "category": "Desserts",
+        "name": "Sizzling Molten Lava",
+        "price": 950,
+        "desc": "Molten lava cake with ice cream",
+        "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&q=80"
+    },
+    {
+        "id": 68,
+        "category": "Extras",
+        "name": "Regular Drink",
+        "price": 150,
+        "desc": "Refreshing soft drink",
+        "img": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&q=80"
+    },
+    {
+        "id": 69,
+        "category": "Extras",
+        "name": "Mineral Water 550ml",
+        "price": 120,
+        "desc": "Refreshing mineral water",
+        "img": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80"
+    },
+    {
+        "id": 70,
+        "category": "Extras",
+        "name": "Mineral Water 330ml",
+        "price": 70,
+        "desc": "Refreshing mineral water",
+        "img": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=80"
+    },
+    {
+        "id": 71,
+        "category": "Extras",
+        "name": "tikka",
+        "price": 999,
+        "desc": "chicken tikka",
+        "img": "https://placehold.co/100x100?text=Food"
+    }
+];
 
         let MENU = JSON.parse(localStorage.getItem('resonanceMenu')) || defaultMenu;
         let cart = {};
