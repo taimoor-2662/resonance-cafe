@@ -187,24 +187,6 @@
             <button class="close-btn" onclick="closeAdmin()">×</button>
         </div>
         
-        <div class="admin-section" style="background: #e8f5e9; border-color: #c8e6c9;">
-            <h3>Auto-Deploy Settings (GitHub)</h3>
-            <p style="font-size: 13px; color: #2e7d32; margin-bottom: 10px;">
-                Fill this in once. When you save a menu item, the website will automatically update the code and publish it for all customers.
-            </p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div>
-                    <label style="font-size: 12px; font-weight: bold;">GitHub Token</label>
-                    <input type="password" id="gh-token" class="admin-input" placeholder="ghp_...">
-                </div>
-                <div>
-                    <label style="font-size: 12px; font-weight: bold;">Repository (username/repo)</label>
-                    <input type="text" id="gh-repo" class="admin-input" placeholder="e.g. myname/cafe-menu">
-                </div>
-            </div>
-            <button class="admin-btn" onclick="saveGitHubSettings()">Save GitHub Info</button>
-        </div>
-
         <div class="admin-section" style="background: #fff3e0; border-color: #ffe0b2;">
             <h3>Change Admin Password</h3>
             <div style="display: flex; flex-direction: column; gap: 10px; max-width: 300px;">
@@ -232,8 +214,8 @@
         
         <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 10px;">
             <h3 style="margin-bottom: 10px;">Publish Changes</h3>
-            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Click below to send your changes to GitHub and publish them live.</p>
-            <button class="admin-btn admin-btn-success" style="font-size: 16px; padding: 15px 30px; width: 100%;" onclick="deployToGitHub()" id="deploy-btn">Save & Deploy to Live Site</button>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Click below to publish your changes to the live website.</p>
+            <button class="admin-btn admin-btn-success" style="font-size: 16px; padding: 15px 30px; width: 100%;" onclick="deployToLiveSite()" id="deploy-btn">Save & Publish Live</button>
         </div>
     </div>
 
@@ -290,6 +272,11 @@
     </div>
 
     <script>
+        // =========================================================
+        // ⚠️ PASTE YOUR CLOUDFLARE WORKER URL HERE (Line 291)
+        // =========================================================
+        const WORKER_URL = "https://resonance-api.taimoor-28092001.workers.dev"; 
+        
         const WHATSAPP_NUMBER = "923180058170"; 
         const CAFE_NAME = "Resonance Cafe";     
         const CURRENCY = "PKR ";
@@ -576,8 +563,6 @@
             if (pass === currentAdminPassword) {
                 document.getElementById("admin-panel").classList.add("active");
                 renderAdminTable();
-                document.getElementById("gh-token").value = localStorage.getItem('ghToken') || '';
-                document.getElementById("gh-repo").value = localStorage.getItem('ghRepo') || '';
             } else if (pass !== null) {
                 alert("Incorrect password.");
             }
@@ -608,12 +593,6 @@
             document.getElementById("new-pass").value = "";
             
             alert("Success! Admin password has been updated.");
-        }
-
-        function saveGitHubSettings() {
-            localStorage.setItem('ghToken', document.getElementById('gh-token').value.trim());
-            localStorage.setItem('ghRepo', document.getElementById('gh-repo').value.trim());
-            alert("GitHub settings saved locally! You can now use the 'Save & Deploy' button.");
         }
 
         function renderAdminTable() {
@@ -757,7 +736,7 @@
 
             saveToLocalStorage();
             closeAdminForm();
-            alert("Item saved locally! Click 'Save & Deploy' on the main Admin Panel to publish.");
+            alert("Item saved locally! Click 'Save & Publish Live' on the main Admin Panel to publish.");
         }
 
         function saveToLocalStorage() {
@@ -767,63 +746,36 @@
             renderAdminTable();
         }
 
-        async function deployToGitHub() {
-            const token = localStorage.getItem('ghToken');
-            const repo = localStorage.getItem('ghRepo'); 
-            
-            if (!token || !repo) {
-                alert("Please enter your GitHub Token and Repository name in the green box above, then click 'Save GitHub Info'.");
+        // --- DEPLOY TO LIVE SITE VIA CLOUDFLARE WORKER ---
+        async function deployToLiveSite() {
+            if (WORKER_URL === "YOUR_WORKER_URL_HERE") {
+                alert("Setup Error: You need to paste your Cloudflare Worker URL into the code (Line 291).");
                 return;
             }
 
             const btn = document.getElementById('deploy-btn');
-            btn.textContent = "Deploying to GitHub... Please wait";
+            btn.textContent = "Publishing... Please wait";
             btn.disabled = true;
 
             try {
-                const url = `https://api.github.com/repos/${repo}/contents/index.html`;
-                const response = await fetch(url, {
-                    headers: { Authorization: `token ${token}` }
-                });
-                
-                if (!response.ok) throw new Error("Could not find the repository. Check your username/repo format.");
-                
-                const data = await response.json();
-                const content = decodeURIComponent(escape(atob(data.content))); 
-                
-                const regex = /const defaultMenu = \[[\s\S]*?\];/;
-                const newMenuString = `const defaultMenu = ${JSON.stringify(MENU, null, 4)};`;
-                
-                if (!regex.test(content)) throw new Error("Could not find 'const defaultMenu = [...]' in the code.");
-                
-                const updatedContent = content.replace(regex, newMenuString);
-                
-                const commitResponse = await fetch(url, {
-                    method: 'PUT',
-                    headers: { 
-                        Authorization: `token ${token}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        message: 'Auto-update menu from Admin Panel',
-                        content: btoa(unescape(encodeURIComponent(updatedContent))), 
-                        sha: data.sha
-                    })
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(MENU)
                 });
 
-                if (!commitResponse.ok) {
-                    const errDetails = await commitResponse.json();
-                    throw new Error("GitHub Error: " + (errDetails.message || "File might be too large (max 1MB). Try smaller images."));
+                if (!response.ok) {
+                    throw new Error("Worker failed to update GitHub.");
                 }
                 
-                alert("Success! 🎉\n\nYour menu has been sent to GitHub. Cloudflare is now updating your live website. This usually takes about 15-30 seconds.");
-                btn.textContent = "Save & Deploy to Live Site";
+                alert("Success! 🎉\n\nYour menu has been published to the live website. It will update in about 15-30 seconds.");
+                btn.textContent = "Save & Publish Live";
                 btn.disabled = false;
                 
             } catch (error) {
                 console.error(error);
-                alert("Deploy failed: " + error.message);
-                btn.textContent = "Save & Deploy to Live Site";
+                alert("Publish failed: " + error.message);
+                btn.textContent = "Save & Publish Live";
                 btn.disabled = false;
             }
         }
